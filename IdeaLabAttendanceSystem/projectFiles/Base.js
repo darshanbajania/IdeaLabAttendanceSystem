@@ -9,7 +9,8 @@ import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Dashboard from './Components/Dashboard/Dashboard';
 import ScanScreen from'./Components/ScanQR/ScanScreen'
-
+import StatusScreen from './Components/StatusScreen/StatusScreen';
+import VisitHistory from './Components/VisitHistory/VisitHistory';
 const Stack = createNativeStackNavigator();
 
 
@@ -25,6 +26,8 @@ export class Base extends Component {
                 <Stack.Screen name="Register" component={Register} />
                 <Stack.Screen name="Dashboard" component={Dashboard} />
                 <Stack.Screen name="ScanScreen" component={ScanScreen} />
+                <Stack.Screen name="StatusScreen" component={StatusScreen} />
+                <Stack.Screen name="VisitHistory" component={VisitHistory} />
 
             </Stack.Navigator>
 

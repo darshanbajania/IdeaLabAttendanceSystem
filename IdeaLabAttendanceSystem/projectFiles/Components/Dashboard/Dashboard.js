@@ -31,6 +31,9 @@ export class Dashboard extends Component {
                         title={'Scan'}
                     />
                     <Button
+                        onPress={() => {
+                            this.props.navigation.navigate('VisitHistory')
+                        }}
                         containerStyle={{ width: '40%', borderRadius: 5, }}
                         buttonStyle={{ backgroundColor: '#2957a4' }}
                         titleStyle={{ fontSize: 20 }}
@@ -45,7 +48,7 @@ export class Dashboard extends Component {
                                 onPress: () => console.log("Cancel Pressed"),
                                 style: "cancel"
                             },
-                            { text: "OK", onPress: () => console.log("OK Pressed") }])
+                            { text: "OK", onPress: () => this.props.navigation.navigate('Home') }])
                     }}
                     containerStyle={{ width: '40%', borderRadius: 5, marginTop: 30, borderWidth: 1, borderColor: '#2957a4' }}
                     buttonStyle={{}}

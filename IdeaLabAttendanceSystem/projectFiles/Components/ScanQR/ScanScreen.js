@@ -21,17 +21,17 @@ export class ScanScreen extends Component {
     }
 
     registerEntry= async()=>{
-        const response=  await baseAPI.post('possts/',{
+        const response=  await baseAPI.post('posts/',{
 
 
             title: 'foo',
             body: 'bar',
             userId: 1,
           });
-          if(response.status  == 200){
-              this.props.navigation.navigate('')
+          if(response.status  == 201){
+              this.props.navigation.navigate('StatusScreen')
           }
-        console.log(response.data)
+        console.log(response.status)
     }
 
     onSuccess = e => {
@@ -59,14 +59,15 @@ Scan QR for Entry
           </Text>
         }
         bottomContent={
-            <View>
+            <View style={{width:'100%', alignItems:'center'}}>
                 <Text style={{fontSize:20, color:'black', marginVertical:10, paddingVertical:10}}>{this.state.Scannedurl}</Text>
             
             <Button
             onPress={()=>{
                 this.registerEntry()
             }}
-            containerStyle={{opacity:this.state.Scannedurl != ''?1:0.25}}
+            disabled={this.state.Scannedurl != ''?false:true}
+            containerStyle={{width:'50%'}}
             buttonStyle={{backgroundColor:'#2957a4',}}
             title={'Proceed'}
             >
